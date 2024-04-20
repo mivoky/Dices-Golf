@@ -8,14 +8,18 @@ public class CameraController : MonoBehaviour
 {
     public Camera MainCamera;
     public Camera SkyCamera;
+    public Transform TransformObject;
     public Transform TransformSkyCamera;
-
+    
     public float SpeedSkyCamera;
-
-    private bool _skyCameraBool = false;
+    public float MaxZeroingTimer = 10f;
 
     private float _moveHorizontal;
     private float _moveVertical;
+    private float _zeroingTimer;
+
+    private bool _skyCameraBool = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +31,7 @@ public class CameraController : MonoBehaviour
     void Update()
     {
         ChangeCamera();
+        ZeroingPosition();
         if (SkyCamera.enabled == true)
         {
             MoveSkyCamera();
@@ -51,5 +56,27 @@ public class CameraController : MonoBehaviour
         TransformSkyCamera.position = new Vector3(TransformSkyCamera.position.x + SpeedSkyCamera * _moveHorizontal * Time.deltaTime, TransformSkyCamera.position.y, TransformSkyCamera.position.z + SpeedSkyCamera * _moveVertical * Time.deltaTime);
         //Debug.Log(Input.GetAxis("Horizontal"));
         //Debug.Log(Input.GetAxis("Vertical"));
+    }
+
+    private void ZeroingPosition()
+    {
+        if (SkyCamera.enabled == false)
+        {
+            _zeroingTimer = _zeroingTimer + Time.deltaTime;
+        }
+        else
+        {
+            _zeroingTimer = 0;
+        }
+        if (Input.GetKeyDown(KeyCode.R) && SkyCamera.enabled == true)
+        {
+            TransformSkyCamera.position = new Vector3(TransformObject.position.x, TransformSkyCamera.position.y, TransformObject.position.z);
+            _zeroingTimer = 0;
+        }
+        if (_zeroingTimer >= MaxZeroingTimer)
+        {
+            TransformSkyCamera.position = new Vector3(TransformObject.position.x, TransformSkyCamera.position.y, TransformObject.position.z);
+            _zeroingTimer = 0;
+        }
     }
 }
