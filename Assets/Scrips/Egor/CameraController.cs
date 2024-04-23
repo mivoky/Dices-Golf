@@ -10,7 +10,7 @@ public class CameraController : MonoBehaviour
     public Camera SkyCamera;
     public Transform TransformObject;
     public Transform TransformSkyCamera;
-    
+
     public float SpeedSkyCamera;
     public float MaxZeroingTimer = 10f;
 
