@@ -11,15 +11,20 @@ public class AddPulseObject : MonoBehaviour
     private Vector3 _vectorFromObject;
     private Rigidbody RB;
     private Vector3 _vectorForce;
+
     // Update is called once per frame
     private void Start()
     {
         RB = GetComponent<Rigidbody>();
     }
-    void Update()
+    private void Update()
     {
-        
-        if (Input.GetMouseButton(0)) 
+        AddPulse();
+    }
+
+    private void AddPulse()
+    {
+        if (Input.GetMouseButton(0))
         {
             _vectorFromObject = new Vector3(transform.position.x, transform.position.y, transform.position.z);
             _vectorToObject = ToObject.position;
@@ -29,6 +34,7 @@ public class AddPulseObject : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             RB.AddForce(_vectorForce * PowerOfImpuls, ForceMode.Impulse);
-        }
+        }   
     }
+
 }
