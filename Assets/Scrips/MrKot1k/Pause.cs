@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Pause : MonoBehaviour
 {
     public GameObject panel;
+    public int NumberOfMenu = 0;
 
     void Update()
     {
@@ -14,10 +16,15 @@ public class Pause : MonoBehaviour
             panel.SetActive(true);
             Time.timeScale = 0;
         }
-        
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Time.timeScale = 1;
-        }
+    }
+    // Продолжить игру
+    public void ContinueGame()
+    {
+        Time.timeScale = 1;
+    } 
+    // Выход в меню
+    public void ExitToMenu()
+    {
+        SceneManager.LoadScene(NumberOfMenu);
     }
 }
