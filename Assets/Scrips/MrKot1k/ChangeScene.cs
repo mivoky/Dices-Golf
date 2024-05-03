@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ExitGame : MonoBehaviour
+public class ChangeScene : MonoBehaviour
 {
-    public void Exitgame()
+    public void MoveToScene(int SceneID)
     {
-        Application.Quit();
+        SceneManager.LoadScene(1);
     }
 }
