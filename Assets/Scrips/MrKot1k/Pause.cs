@@ -17,8 +17,7 @@ public class Pause : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            panel.SetActive(false);
-            Time.timeScale = 1f;
+            Time.timeScale = 1;
         }
     }
 }
