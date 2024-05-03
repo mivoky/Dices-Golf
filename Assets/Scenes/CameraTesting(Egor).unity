@@ -1151,9 +1151,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2127230645}
-        m_MethodName: ContinueGame
-        m_Mode: 1
+      - m_Target: {fileID: 2127230643}
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1162,9 +1162,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2127230643}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 2127230645}
+        m_MethodName: ContinueGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -9141,6 +9141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panel: {fileID: 2127230643}
   NumberOfMenu: 0
+  OnPause: 0
 --- !u!114 &1270619397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15558,6 +15559,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panel: {fileID: 2127230643}
   NumberOfMenu: 0
+  OnPause: 0
 --- !u!114 &2127230646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15706,7 +15708,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -6922793697723135513, guid: 34f754f0df6bc114aa065ba2f7d4147b, type: 3}
+  - {fileID: 2100000, guid: 6eb138544f20f1f41bd020d6bb4c1218, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
