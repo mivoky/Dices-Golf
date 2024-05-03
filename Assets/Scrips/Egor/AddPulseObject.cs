@@ -7,6 +7,8 @@ public class AddPulseObject : MonoBehaviour
     public Transform ToObject;
     public float PowerOfImpuls;
 
+    private GameObject _canvasPause;
+    private Pause _pauseCheck;
     private Vector3 _vectorToObject;
     private Vector3 _vectorFromObject;
     private Rigidbody RB;
@@ -15,11 +17,17 @@ public class AddPulseObject : MonoBehaviour
     // Update is called once per frame
     private void Start()
     {
+        _canvasPause = GameObject.Find("Canvas");
         RB = GetComponent<Rigidbody>();
+        _pauseCheck = _canvasPause.GetComponent<Pause>();
+        
     }
     private void Update()
     {
-        AddPulse();
+        if (_pauseCheck.OnPause == false)
+        {
+            AddPulse();
+        }
     }
 
     private void AddPulse()
@@ -29,7 +37,7 @@ public class AddPulseObject : MonoBehaviour
             _vectorFromObject = new Vector3(transform.position.x, transform.position.y, transform.position.z);
             _vectorToObject = ToObject.position;
             _vectorForce = _vectorToObject - _vectorFromObject;
-            Debug.Log("LKM");
+            //Debug.Log("LKM");
         }
         if (Input.GetMouseButtonUp(0))
         {

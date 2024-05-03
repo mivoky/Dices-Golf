@@ -12,15 +12,28 @@ public class ArrowRotate : MonoBehaviour
     private MeshRenderer mr;
     private float _mouseHorizontal;
     private float _mouseVertical;
+
+    private GameObject _canvasPause;
+    private Pause _pauseCheck;
     // Start is called before the first frame update
     void Start()
     {
         mr = GetComponent<MeshRenderer>();
         mr.enabled = false;
+        // обнаружение паузы
+        _canvasPause = GameObject.Find("Canvas");
+        _pauseCheck = _canvasPause.GetComponent<Pause>();
     }
 
     // Update is called once per frame
     void Update()
+    {
+        if (_pauseCheck.OnPause == false)
+        {
+            RotateArrow();
+        }
+    }
+    private void RotateArrow()
     {
         transform.position = Player.position;
         if (Input.GetMouseButtonDown(0))
@@ -34,7 +47,7 @@ public class ArrowRotate : MonoBehaviour
             _mouseVertical = Input.GetAxis("Mouse Y");
             transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y + _mouseHorizontal * Speed * Time.deltaTime, transform.localEulerAngles.z + _mouseVertical * Speed * Time.deltaTime);
         }
-        if (Input.GetMouseButtonUp(0)) 
+        if (Input.GetMouseButtonUp(0))
         {
             mr.enabled = false;
         }
