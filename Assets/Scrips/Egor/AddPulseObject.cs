@@ -6,25 +6,33 @@ public class AddPulseObject : MonoBehaviour
 {
     public Transform ToObject;
     public float PowerOfImpuls;
-
+    // Проверка на паузу
     private GameObject _canvasPause;
     private Pause _pauseCheck;
+    // Направление удара и сила удара
     private Vector3 _vectorToObject;
     private Vector3 _vectorFromObject;
     private Rigidbody RB;
     private Vector3 _vectorForce;
-
+    // Проверка на столкновение с землей
+    public bool IsGrounded;
     // Update is called once per frame
     private void Start()
     {
+        //Проверка на паузу
         _canvasPause = GameObject.Find("Canvas");
-        RB = GetComponent<Rigidbody>();
         _pauseCheck = _canvasPause.GetComponent<Pause>();
-        
+
+        RB = GetComponent<Rigidbody>();
+    }
+    void OnCollisionEnter(Collision other)
+    {
+        //Debug.Log("Ground");
+        IsGrounded = true;
     }
     private void Update()
     {
-        if (_pauseCheck.OnPause == false)
+        if (_pauseCheck.OnPause == false && IsGrounded == true)
         {
             AddPulse();
         }
@@ -42,6 +50,7 @@ public class AddPulseObject : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             RB.AddForce(_vectorForce * PowerOfImpuls, ForceMode.Impulse);
+            IsGrounded = false;
         }   
     }
 
