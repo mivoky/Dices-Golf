@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Buttons Example Scene.unity
     guid: c30dba1aaa5a0dd409b8803e7f40b03c
   - enabled: 1
-    path: Assets/Scenes/CameraTesting(Egor).unity
-    guid: 415beeea8ede1b6449b5d5c4cd50f6e8
+    path: Assets/Scenes/PlanesLevelScene.unity
+    guid: a0dbebcff202cec4e8c45e79e69c8bdf
   m_configObjects: {}
