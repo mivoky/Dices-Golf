@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PlanesLevelScene.unity
     guid: a0dbebcff202cec4e8c45e79e69c8bdf
+  - enabled: 1
+    path: Assets/Scenes/TableLevel.unity
+    guid: a739f188196a47142bd7e17db8ceacff
+  - enabled: 1
+    path: Assets/Scenes/DungeonLevel.unity
+    guid: a5729cc631c8f9f4f8f2bb3d69428063
   m_configObjects: {}
