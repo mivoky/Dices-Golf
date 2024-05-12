@@ -41,12 +41,12 @@ public class ArrowRotate : MonoBehaviour
     private void RotateArrow()
     {
         transform.position = Player.position;
-        if (Input.GetMouseButtonDown(0) && _addPulseObject.IsGrounded == true)
+        if (Input.GetMouseButtonDown(0) && _addPulseObject.IsGrounded() == true)
         {
             mr.enabled = true;
             transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, Persecutor.localEulerAngles.y + 90, transform.localEulerAngles.z);
         }
-        if (Input.GetMouseButton(0) && _addPulseObject.IsGrounded == true)
+        if (Input.GetMouseButton(0) && _addPulseObject.IsGrounded() == true)
         {
             _mouseHorizontal = Input.GetAxis("Mouse X");
             _mouseVertical = Input.GetAxis("Mouse Y");

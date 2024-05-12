@@ -15,7 +15,16 @@ public class AddPulseObject : MonoBehaviour
     private Rigidbody RB;
     private Vector3 _vectorForce;
     // Проверка на столкновение с землей
-    public bool IsGrounded;
+    public bool IsGrounded()
+    {
+        RaycastHit hit;
+        float rayLength = 1.1f; // Adjust based on your character's size
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, rayLength))
+        {
+            return true;
+        }
+        return false;
+    }
     // Update is called once per frame
     private void Start()
     {
@@ -25,17 +34,13 @@ public class AddPulseObject : MonoBehaviour
 
         RB = GetComponent<Rigidbody>();
     }
-    void OnCollisionEnter(Collision other)
-    {
-        //Debug.Log("Ground");
-        IsGrounded = true;
-    }
     private void Update()
     {
-        if (_pauseCheck.OnPause == false && IsGrounded == true)
+        if (_pauseCheck.OnPause == false && IsGrounded() == true)
         {
             AddPulse();
         }
+        Debug.Log(IsGrounded());
     }
 
     private void AddPulse()
@@ -50,7 +55,6 @@ public class AddPulseObject : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             RB.AddForce(_vectorForce * PowerOfImpuls, ForceMode.Impulse);
-            IsGrounded = false;
         }   
     }
 
