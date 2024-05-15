@@ -5,9 +5,16 @@ using UnityEngine;
 
 public class D6 : MonoBehaviour
 {
+    /* Ощущения
+     как на х** вращения*/
     public GameObject Player;
+    //Материал активированного кубика и его PartycleSystem
+    public Material ActivityMaterial;
+    //Подъем кубика и его кручение
+    public float RotationSpeed = 1.0f;
     public float Speed = 3f;
     public float LiftUp;
+    // Минимальное и максимальное время эффектов
     public int MinTime = 10;
     public int MaxTime = 30;
     // Диапазоны случайных значений
@@ -30,6 +37,7 @@ public class D6 : MonoBehaviour
     private Vector3 _endPosition;
     // Компоненты 
     private MeshRenderer _meshRenderer;
+    private BoxCollider _boxCollider;
     // Компоненты игрока для редактирования
     private Rigidbody _playerRB;
     private AddPulseObject _playerAddPulse;
@@ -43,6 +51,7 @@ public class D6 : MonoBehaviour
         _endPosition = new Vector3(transform.position.x, transform.position.y + LiftUp, transform.position.z);
         // Получение компонентов
         _meshRenderer = GetComponent<MeshRenderer>();
+        _boxCollider = GetComponent<BoxCollider>();
         // Получение компонентов игрока
         _playerRB = Player.GetComponent<Rigidbody>();
         _playerAddPulse = Player.GetComponent<AddPulseObject>();
@@ -60,7 +69,9 @@ public class D6 : MonoBehaviour
     {
         if (_start)
         {
+            _meshRenderer.material = ActivityMaterial; 
             transform.position = Vector3.MoveTowards(transform.position, _endPosition, Speed * Time.deltaTime);
+            transform.Rotate(Vector3.one * RotationSpeed);
         }
         if (transform.position == _endPosition && _start)
         {
@@ -94,8 +105,12 @@ public class D6 : MonoBehaviour
             StartCoroutine(Mass(_destroyOtherEffect, _coroutineTimer));
         if (number == 3)
             StartCoroutine(PlayerLocalScale(_destroyOtherEffect, _coroutineTimer));
-        _meshRenderer.enabled = false;
+        //Дебаг
         Debug.Log("Эффект:" + number + " Уничтожать другие эффекты:" + _destroyOtherEffect + " Таймер:" + _coroutineTimer);
+        // Отключение компонентов кубика
+        _meshRenderer.enabled = false;
+        _boxCollider.enabled = false;
+        
     }
 
     public void DestroyEffect()
