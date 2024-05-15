@@ -40,7 +40,7 @@ public class AddPulseObject : MonoBehaviour
         {
             AddPulse();
         }
-        Debug.Log(IsGrounded());
+        //Debug.Log(IsGrounded());
     }
 
     private void AddPulse()
