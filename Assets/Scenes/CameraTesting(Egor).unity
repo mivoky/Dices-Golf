@@ -2098,6 +2098,10 @@ PrefabInstance:
       propertyPath: ActivityMaterial
       value: 
       objectReference: {fileID: 2100000, guid: 798b69304585fd14da630db506c06921, type: 2}
+    - target: {fileID: 2093564763, guid: 4c3b84fc44e16764693b9b5f6c46fc9b, type: 3}
+      propertyPath: MinPowerOfImpuls
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 366750866633097467, guid: 4c3b84fc44e16764693b9b5f6c46fc9b,
         type: 3}
       propertyPath: m_RootOrder
