@@ -1,10 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Net.Mime;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class D6 : MonoBehaviour
 {
+    public Image jump;
+    public Image mussa;
+    public Image diametr;
+    public Image speed;
+        
     /* Ощущения
      как на х** вращения*/
     public GameObject Player;
