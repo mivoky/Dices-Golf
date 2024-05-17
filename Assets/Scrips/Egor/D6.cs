@@ -1,16 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Net.Mime;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
 
 public class D6 : MonoBehaviour
 {
-    public Image jump;
-    public Image mussa;
-    public Image diametr;
-    public Image speed;
+    public GameObject jump;
+    public GameObject mussa;
+    public GameObject diametr;
+    public GameObject speed;
         
     /* Ощущения
      как на х** вращения*/
@@ -141,11 +142,13 @@ public class D6 : MonoBehaviour
             DestroyEffect();
         }
         _playerAddPulse.PowerOfImpuls = Random.Range(MinPowerOfImpuls, MaxPowerOfImpuls + 1);
+        jump.SetActive(true);
         Debug.Log(_playerAddPulse.PowerOfImpuls);
         if (timer)
         {
             yield return new WaitForSecondsRealtime(Random.Range(MinTime, MaxTime + 1));
             _playerAddPulse.PowerOfImpuls = _originalPlayerAddPulse;
+            jump.SetActive(false);
         }
         Destroy(gameObject);
         yield return null;
@@ -157,10 +160,12 @@ public class D6 : MonoBehaviour
             DestroyEffect();
         }
         _playerRB.mass = Random.Range(MinMass, MaxMass + 1);
+        mussa.SetActive(true);
         if (timer)
         {
             yield return new WaitForSecondsRealtime(Random.Range(MinTime, MaxTime + 1));
             _playerRB.mass = _originalPlayerRB;
+            mussa.SetActive(false);
         }
         Destroy(gameObject);
         yield return null;
@@ -174,10 +179,12 @@ public class D6 : MonoBehaviour
         transform.position += Vector3.up * 2;
         _cofLocalScale = Random.Range(MinLocalScale, MaxLocalScale + 1);
         _playerTransform.localScale = Vector3.one * _cofLocalScale * 10;
+        diametr.SetActive(true);
         if (timer)
         {
             yield return new WaitForSecondsRealtime(Random.Range(MinTime, MaxTime + 1));
             _playerTransform.localScale = _originalPlayerTransform;
+            diametr.SetActive(false);
         }
         Destroy(gameObject);
         yield return null;
@@ -189,10 +196,12 @@ public class D6 : MonoBehaviour
             DestroyEffect();
         }
         _playerAddPulse.SpeedScale = Random.Range(MinSpeedScale, MaxSpeedScale + 1);
+        speed.SetActive(true);
         if (timer)
         {
             yield return new WaitForSecondsRealtime(Random.Range(MinTime, MaxTime + 1));
             _playerAddPulse.SpeedScale = _originalPlayerSpeedScale;
+            speed.SetActive(false);
         }
         Destroy(gameObject);
         yield return null;
