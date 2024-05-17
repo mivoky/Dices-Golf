@@ -6,6 +6,11 @@ public class AddPulseObject : MonoBehaviour
 {
     public Transform ToObject;
     public float PowerOfImpuls;
+    // Скорость увелечения скалирования
+    public float SpeedScale = 1f;
+    // Ограничение скалирования
+    public float MinScale = 0.5f;
+    public float MaxScale = 1.5f;
     // Проверка на паузу
     private GameObject _canvasPause;
     private Pause _pauseCheck;
@@ -14,6 +19,9 @@ public class AddPulseObject : MonoBehaviour
     private Vector3 _vectorFromObject;
     private Rigidbody RB;
     private Vector3 _vectorForce;
+    // Скалирование удара
+    private float _scalePower = 0;
+    private bool _scalePowerUp = true;
     // Проверка на столкновение с землей
     public bool IsGrounded()
     {
@@ -47,6 +55,7 @@ public class AddPulseObject : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
+            StartCoroutine(ForceOfImpact());
             _vectorFromObject = new Vector3(transform.position.x, transform.position.y, transform.position.z);
             _vectorToObject = ToObject.position;
             _vectorForce = _vectorToObject - _vectorFromObject;
@@ -54,8 +63,35 @@ public class AddPulseObject : MonoBehaviour
         }
         if (Input.GetMouseButtonUp(0))
         {
-            RB.AddForce(_vectorForce * PowerOfImpuls, ForceMode.Impulse);
+            RB.AddForce(_vectorForce * PowerOfImpuls * _scalePower, ForceMode.Impulse);
+            _scalePower = 0;
         }   
     }
-
+    IEnumerator ForceOfImpact()
+    {
+        Debug.Log(_scalePower);
+        if (Input.GetMouseButton(0))
+        {
+            if (_scalePowerUp)
+            {
+                _scalePower += SpeedScale * Time.deltaTime;
+                if (_scalePower > MaxScale)
+                {
+                    _scalePowerUp = !_scalePowerUp;
+                }
+            }
+            else
+            {
+                _scalePower -= Time.deltaTime;
+                if (_scalePower < MinScale)
+                {
+                    _scalePowerUp = !_scalePowerUp;
+                }
+            }
+        }
+        if (Input.GetMouseButtonUp(0))
+        {
+            yield return null;
+        }
+    }
 }
