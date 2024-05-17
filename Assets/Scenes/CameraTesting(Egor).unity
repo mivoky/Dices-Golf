@@ -272,6 +272,7 @@ GameObject:
   m_Component:
   - component: {fileID: 156437471}
   - component: {fileID: 156437469}
+  - component: {fileID: 156437470}
   m_Layer: 0
   m_Name: SkyCamera
   m_TagString: Untagged
@@ -322,6 +323,24 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &156437470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 156437468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd1c436b07f76044e91e1d0f61476647, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 5
+  MinCoordinate: 10
+  MaxCoordinate: 50
+  XCoordinate: 0
+  YCoordinate: 1
+  ZCoordinate: 0
 --- !u!4 &156437471
 Transform:
   m_ObjectHideFlags: 0
@@ -330,7 +349,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 156437468}
   m_LocalRotation: {x: 0.67559016, y: 0, z: 0, w: 0.7372774}
-  m_LocalPosition: {x: 4.8459806, y: 13.15, z: -22.24}
+  m_LocalPosition: {x: 2.95, y: 13.15, z: -2.76}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -783,7 +802,8 @@ PrefabInstance:
       propertyPath: PowerOfImpuls
       value: 3
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 212510607335644587, guid: 3939534d86b289d43abeae681cbed992, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3939534d86b289d43abeae681cbed992, type: 3}
 --- !u!1 &936503856
 GameObject:
