@@ -24,6 +24,8 @@ public class D6 : MonoBehaviour
     public int MaxMass = 3;
     public int MinLocalScale = 1;
     public int MaxLocalScale = 2;
+    public float MinSpeedScale = 1.0f;
+    public float MaxSpeedScale = 3.0f;
     // Параметры корутин
     private bool _destroyOtherEffect;
     private bool _coroutineTimer;
@@ -42,9 +44,11 @@ public class D6 : MonoBehaviour
     private Rigidbody _playerRB;
     private AddPulseObject _playerAddPulse;
     private Transform _playerTransform;
+    private float _playerSpeedScale;
     // Изначальные значения параметров игрока
     private float _originalPlayerRB;
     private float _originalPlayerAddPulse;
+    private float _originalPlayerSpeedScale;
     private Vector3 _originalPlayerTransform;
     void Start()
     {
@@ -60,6 +64,7 @@ public class D6 : MonoBehaviour
         _originalPlayerAddPulse = _playerAddPulse.PowerOfImpuls;
         _originalPlayerRB = _playerRB.mass;
         _originalPlayerTransform = _playerTransform.localScale;
+        _originalPlayerSpeedScale = _playerAddPulse.SpeedScale;
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -75,12 +80,12 @@ public class D6 : MonoBehaviour
         }
         if (transform.position == _endPosition && _start)
         {
-            EffectTable(Random.Range(1, 4));
+            EffectTable(Random.Range(1, 5));
             _start = false;
         }
         if (TestEffects)
         {
-            EffectTable(Random.Range(1, 4));
+            EffectTable(Random.Range(1, 5));
             TestEffects = false;
         }
     }
@@ -105,6 +110,8 @@ public class D6 : MonoBehaviour
             StartCoroutine(Mass(_destroyOtherEffect, _coroutineTimer));
         if (number == 3)
             StartCoroutine(PlayerLocalScale(_destroyOtherEffect, _coroutineTimer));
+        if (number == 4)
+            StartCoroutine(SpeedScale(_destroyOtherEffect, _coroutineTimer));
         //Дебаг
         Debug.Log("Эффект:" + number + " Уничтожать другие эффекты:" + _destroyOtherEffect + " Таймер:" + _coroutineTimer);
         // Отключение компонентов кубика
@@ -164,6 +171,21 @@ public class D6 : MonoBehaviour
         {
             yield return new WaitForSecondsRealtime(Random.Range(MinTime, MaxTime + 1));
             _playerTransform.localScale = _originalPlayerTransform;
+        }
+        Destroy(gameObject);
+        yield return null;
+    }
+    IEnumerator SpeedScale(bool destroyOtherEffect, bool timer)
+    {
+        if (destroyOtherEffect)
+        {
+            DestroyEffect();
+        }
+        _playerAddPulse.SpeedScale = Random.Range(MinSpeedScale, MaxSpeedScale + 1);
+        if (timer)
+        {
+            yield return new WaitForSecondsRealtime(Random.Range(MinTime, MaxTime + 1));
+            _playerAddPulse.SpeedScale = _originalPlayerSpeedScale;
         }
         Destroy(gameObject);
         yield return null;
