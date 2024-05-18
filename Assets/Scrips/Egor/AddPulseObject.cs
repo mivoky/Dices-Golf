@@ -20,7 +20,7 @@ public class AddPulseObject : MonoBehaviour
     private Rigidbody RB;
     private Vector3 _vectorForce;
     // Скалирование удара
-    private float _scalePower = 0;
+    public float _scalePower = 0;
     private bool _scalePowerUp = true;
     // Проверка на столкновение с землей
     public bool IsGrounded()
@@ -69,7 +69,7 @@ public class AddPulseObject : MonoBehaviour
     }
     IEnumerator ForceOfImpact()
     {
-        Debug.Log(_scalePower);
+        //Debug.Log(_scalePower);
         if (Input.GetMouseButton(0))
         {
             if (_scalePowerUp)
