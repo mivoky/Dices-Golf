@@ -1223,6 +1223,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ImpulseSlider
       objectReference: {fileID: 0}
+    - target: {fileID: 1347088482006586863, guid: 02735c597dcf023478146daa3142f59b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1347088482300629133, guid: 02735c597dcf023478146daa3142f59b,
         type: 3}
       propertyPath: m_Color.b
@@ -1241,7 +1246,7 @@ PrefabInstance:
     - target: {fileID: 1347088482300629134, guid: 02735c597dcf023478146daa3142f59b,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.63
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1347088482300629134, guid: 02735c597dcf023478146daa3142f59b,
         type: 3}
