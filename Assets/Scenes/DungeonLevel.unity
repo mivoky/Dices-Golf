@@ -8145,6 +8145,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 2.56
       objectReference: {fileID: 0}
+    - target: {fileID: 3839092938213521929, guid: 49fc67c22131d9542a2453160f983ac8,
+        type: 3}
+      propertyPath: ResetPoint
+      value: 
+      objectReference: {fileID: 1071255207}
     - target: {fileID: 7682250746537551955, guid: 49fc67c22131d9542a2453160f983ac8,
         type: 3}
       propertyPath: m_RootOrder

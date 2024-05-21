@@ -2117,6 +2117,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3839092938213521929, guid: 49fc67c22131d9542a2453160f983ac8,
+        type: 3}
+      propertyPath: ResetPoint
+      value: 
+      objectReference: {fileID: 704252003}
     - target: {fileID: 7682250746537551955, guid: 49fc67c22131d9542a2453160f983ac8,
         type: 3}
       propertyPath: m_RootOrder
@@ -10461,6 +10466,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Dice_d6 Variant 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 391425552624243816, guid: 8800454183b24294badc8023f52027c5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 807193421691178354, guid: 8800454183b24294badc8023f52027c5,
         type: 3}
