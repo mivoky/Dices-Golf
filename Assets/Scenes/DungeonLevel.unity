@@ -12226,6 +12226,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 2.56
       objectReference: {fileID: 0}
+    - target: {fileID: 3553249698144892944, guid: 49fc67c22131d9542a2453160f983ac8,
+        type: 3}
+      propertyPath: MaxCoordinate
+      value: 33
+      objectReference: {fileID: 0}
+    - target: {fileID: 3553249698144892944, guid: 49fc67c22131d9542a2453160f983ac8,
+        type: 3}
+      propertyPath: MinCoordinate
+      value: -63
+      objectReference: {fileID: 0}
     - target: {fileID: 3839092938213521929, guid: 49fc67c22131d9542a2453160f983ac8,
         type: 3}
       propertyPath: ResetPoint
