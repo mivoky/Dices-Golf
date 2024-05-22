@@ -17,11 +17,10 @@ public class LevelEnd : MonoBehaviour
             _MeshRend.material = _MaterialReady;
         }
     }
-
     //переход на следующий уровень
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        var PlayerScript = collision.gameObject.GetComponent<AddPulseObject>();
+        var PlayerScript = other.gameObject.GetComponent<AddPulseObject>();
         if (PlayerScript != null)
         {
             if (KeysCount <= 0)
@@ -30,4 +29,5 @@ public class LevelEnd : MonoBehaviour
             }
         }
     }
+
 }

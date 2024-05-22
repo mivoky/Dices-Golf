@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7718,6 +7718,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3262234787146243231, guid: f694185e01a1f8349aa4f7d352e95da5,
+        type: 3}
+      propertyPath: KeysCount
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f694185e01a1f8349aa4f7d352e95da5, type: 3}
 --- !u!4 &1211809114 stripped
@@ -7726,6 +7731,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1211809113}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1211809115 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3262234787146243231, guid: f694185e01a1f8349aa4f7d352e95da5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1211809113}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5427cece23ca0946861841df1a6ac8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1224542848
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12408,6 +12425,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2077846769}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2077846771 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8309775135473488148, guid: 62c6b7140275ab44380d25afef692325,
+    type: 3}
+  m_PrefabInstance: {fileID: 2077846769}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2077846772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2077846771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63e49ef13f8d75a4baafb0b4f03b426b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SphereOfEndLevel: {fileID: 1211809115}
 --- !u!1001 &2084380694
 PrefabInstance:
   m_ObjectHideFlags: 0

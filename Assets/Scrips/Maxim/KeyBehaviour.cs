@@ -13,6 +13,7 @@ public class KeyBehaviour : MonoBehaviour
             if (PlayerScript != null)
             {
                 _SphereOfEndLevel.DecreaseKeysCount();
+                gameObject.GetComponent<KeyBehaviour>().enabled = false;
             }
         }
     }
