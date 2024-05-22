@@ -10,6 +10,7 @@ public class ResetOnR : MonoBehaviour
     [SerializeField] private Transform PlayerTrans;
     [SerializeField] private Rigidbody PlayerRigBod;
     [SerializeField] private Transform ResetPoint;
+    [SerializeField] private D6 _D6;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
@@ -38,6 +39,7 @@ public class ResetOnR : MonoBehaviour
     IEnumerator ResetPos()
     {
         PlayerTrans.position = ResetPoint.position;
+        _D6.DestroyEffect();
         PlayerRigBod.isKinematic = true;
         yield return new WaitForSeconds(0.01f);
         PlayerRigBod.isKinematic = false;
