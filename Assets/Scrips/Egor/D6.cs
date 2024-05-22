@@ -48,6 +48,7 @@ public class D6 : MonoBehaviour
     // Компоненты 
     private MeshRenderer _meshRenderer;
     private BoxCollider _boxCollider;
+    [SerializeField] private GameObject _particleSystem;
     // Компоненты игрока для редактирования
     private Rigidbody _playerRB;
     private AddPulseObject _playerAddPulse;
@@ -58,6 +59,8 @@ public class D6 : MonoBehaviour
     private float _originalPlayerAddPulse;
     private float _originalPlayerSpeedScale;
     private Vector3 _originalPlayerTransform;
+    //
+    [SerializeField] private LevelEnd _SphereOfEndLevel;
     void Start()
     {
         _endPosition = new Vector3(transform.position.x, transform.position.y + LiftUp, transform.position.z);
@@ -125,7 +128,9 @@ public class D6 : MonoBehaviour
         // Отключение компонентов кубика
         _meshRenderer.enabled = false;
         _boxCollider.enabled = false;
-        
+        _particleSystem.SetActive(false);
+        _SphereOfEndLevel.DecreaseKeysCount();
+
     }
 
     public void DestroyEffect()

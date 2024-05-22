@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 992051879557702803}
   - component: {fileID: 7010932929008148832}
   - component: {fileID: 8074306367755901556}
-  - component: {fileID: 2268794821707462703}
   m_Layer: 0
   m_Name: Dice_d6 (Key)
   m_TagString: Untagged
@@ -130,6 +129,8 @@ MonoBehaviour:
   MinSpeedScale: 1
   MaxSpeedScale: 3
   TestEffects: 0
+  _particleSystem: {fileID: 2027640482521529543}
+  _SphereOfEndLevel: {fileID: 0}
 --- !u!82 &7010932929008148832
 AudioSource:
   m_ObjectHideFlags: 0
@@ -238,19 +239,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 376c34bd90b594541870715f9a6a7963, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2268794821707462703
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 259340403575700873}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63e49ef13f8d75a4baafb0b4f03b426b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _SphereOfEndLevel: {fileID: 0}
 --- !u!1 &2027640482521529543
 GameObject:
   m_ObjectHideFlags: 0
@@ -297,7 +285,7 @@ ParticleSystem:
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
-  looping: 0
+  looping: 1
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0

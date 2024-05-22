@@ -7,14 +7,23 @@ public class LevelEnd : MonoBehaviour
 {
     public int KeysCount = 0;
     [SerializeField] private Material _MaterialReady;
+    private float t = 0.0f;
 
+    private void Update()
+    {
+        t = t + (1 * Time.deltaTime);
+    }
     public void DecreaseKeysCount()
     {
-        KeysCount--;
-        if (KeysCount <= 0)
+        if (t > 1.0f)
         {
-            var _MeshRend = GetComponent<MeshRenderer>();
-            _MeshRend.material = _MaterialReady;
+            t = 0.0f;
+            KeysCount--;
+            if (KeysCount <= 0)
+            {
+                var _MeshRend = GetComponent<MeshRenderer>();
+                _MeshRend.material = _MaterialReady;
+            }
         }
     }
     //переход на следующий уровень
