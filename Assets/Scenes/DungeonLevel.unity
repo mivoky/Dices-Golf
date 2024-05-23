@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2680,9 +2680,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 992051879557702803, guid: f16d4fafd56296f4ab573afee275f365,
         type: 3}
+      propertyPath: jump
+      value: 
+      objectReference: {fileID: 1548491548}
+    - target: {fileID: 992051879557702803, guid: f16d4fafd56296f4ab573afee275f365,
+        type: 3}
+      propertyPath: mussa
+      value: 
+      objectReference: {fileID: 1548491550}
+    - target: {fileID: 992051879557702803, guid: f16d4fafd56296f4ab573afee275f365,
+        type: 3}
+      propertyPath: speed
+      value: 
+      objectReference: {fileID: 1548491547}
+    - target: {fileID: 992051879557702803, guid: f16d4fafd56296f4ab573afee275f365,
+        type: 3}
       propertyPath: Player
       value: 
       objectReference: {fileID: 1548491546}
+    - target: {fileID: 992051879557702803, guid: f16d4fafd56296f4ab573afee275f365,
+        type: 3}
+      propertyPath: diametr
+      value: 
+      objectReference: {fileID: 1548491549}
     - target: {fileID: 992051879557702803, guid: f16d4fafd56296f4ab573afee275f365,
         type: 3}
       propertyPath: _SphereOfEndLevel
@@ -10754,9 +10774,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 992051879557702803, guid: f16d4fafd56296f4ab573afee275f365,
         type: 3}
+      propertyPath: jump
+      value: 
+      objectReference: {fileID: 1548491548}
+    - target: {fileID: 992051879557702803, guid: f16d4fafd56296f4ab573afee275f365,
+        type: 3}
+      propertyPath: mussa
+      value: 
+      objectReference: {fileID: 1548491550}
+    - target: {fileID: 992051879557702803, guid: f16d4fafd56296f4ab573afee275f365,
+        type: 3}
+      propertyPath: speed
+      value: 
+      objectReference: {fileID: 1548491547}
+    - target: {fileID: 992051879557702803, guid: f16d4fafd56296f4ab573afee275f365,
+        type: 3}
       propertyPath: Player
       value: 
       objectReference: {fileID: 1548491546}
+    - target: {fileID: 992051879557702803, guid: f16d4fafd56296f4ab573afee275f365,
+        type: 3}
+      propertyPath: diametr
+      value: 
+      objectReference: {fileID: 1548491549}
     - target: {fileID: 992051879557702803, guid: f16d4fafd56296f4ab573afee275f365,
         type: 3}
       propertyPath: _SphereOfEndLevel
@@ -11129,9 +11169,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 992051879557702803, guid: f16d4fafd56296f4ab573afee275f365,
         type: 3}
+      propertyPath: jump
+      value: 
+      objectReference: {fileID: 1548491548}
+    - target: {fileID: 992051879557702803, guid: f16d4fafd56296f4ab573afee275f365,
+        type: 3}
+      propertyPath: mussa
+      value: 
+      objectReference: {fileID: 1548491550}
+    - target: {fileID: 992051879557702803, guid: f16d4fafd56296f4ab573afee275f365,
+        type: 3}
+      propertyPath: speed
+      value: 
+      objectReference: {fileID: 1548491547}
+    - target: {fileID: 992051879557702803, guid: f16d4fafd56296f4ab573afee275f365,
+        type: 3}
       propertyPath: Player
       value: 
       objectReference: {fileID: 1548491546}
+    - target: {fileID: 992051879557702803, guid: f16d4fafd56296f4ab573afee275f365,
+        type: 3}
+      propertyPath: diametr
+      value: 
+      objectReference: {fileID: 1548491549}
     - target: {fileID: 992051879557702803, guid: f16d4fafd56296f4ab573afee275f365,
         type: 3}
       propertyPath: _SphereOfEndLevel
@@ -12314,6 +12374,30 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1548491545}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1548491547 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4499393453024415849, guid: 49fc67c22131d9542a2453160f983ac8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1548491545}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1548491548 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5104418508811775470, guid: 49fc67c22131d9542a2453160f983ac8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1548491545}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1548491549 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8497584079152462704, guid: 49fc67c22131d9542a2453160f983ac8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1548491545}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1548491550 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3263333868908927698, guid: 49fc67c22131d9542a2453160f983ac8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1548491545}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1552232763
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12473,9 +12557,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 992051879557702803, guid: f16d4fafd56296f4ab573afee275f365,
         type: 3}
+      propertyPath: jump
+      value: 
+      objectReference: {fileID: 1548491548}
+    - target: {fileID: 992051879557702803, guid: f16d4fafd56296f4ab573afee275f365,
+        type: 3}
+      propertyPath: mussa
+      value: 
+      objectReference: {fileID: 1548491550}
+    - target: {fileID: 992051879557702803, guid: f16d4fafd56296f4ab573afee275f365,
+        type: 3}
+      propertyPath: speed
+      value: 
+      objectReference: {fileID: 1548491547}
+    - target: {fileID: 992051879557702803, guid: f16d4fafd56296f4ab573afee275f365,
+        type: 3}
       propertyPath: Player
       value: 
       objectReference: {fileID: 1548491546}
+    - target: {fileID: 992051879557702803, guid: f16d4fafd56296f4ab573afee275f365,
+        type: 3}
+      propertyPath: diametr
+      value: 
+      objectReference: {fileID: 1548491549}
     - target: {fileID: 992051879557702803, guid: f16d4fafd56296f4ab573afee275f365,
         type: 3}
       propertyPath: _SphereOfEndLevel
@@ -14862,9 +14966,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 992051879557702803, guid: f16d4fafd56296f4ab573afee275f365,
         type: 3}
+      propertyPath: jump
+      value: 
+      objectReference: {fileID: 1548491548}
+    - target: {fileID: 992051879557702803, guid: f16d4fafd56296f4ab573afee275f365,
+        type: 3}
+      propertyPath: mussa
+      value: 
+      objectReference: {fileID: 1548491550}
+    - target: {fileID: 992051879557702803, guid: f16d4fafd56296f4ab573afee275f365,
+        type: 3}
+      propertyPath: speed
+      value: 
+      objectReference: {fileID: 1548491547}
+    - target: {fileID: 992051879557702803, guid: f16d4fafd56296f4ab573afee275f365,
+        type: 3}
       propertyPath: Player
       value: 
       objectReference: {fileID: 1548491546}
+    - target: {fileID: 992051879557702803, guid: f16d4fafd56296f4ab573afee275f365,
+        type: 3}
+      propertyPath: diametr
+      value: 
+      objectReference: {fileID: 1548491549}
     - target: {fileID: 992051879557702803, guid: f16d4fafd56296f4ab573afee275f365,
         type: 3}
       propertyPath: _SphereOfEndLevel
