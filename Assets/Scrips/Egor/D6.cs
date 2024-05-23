@@ -112,7 +112,7 @@ public class D6 : MonoBehaviour
         if (_rand == 1)
             _coroutineTimer = true;
         else
-            _coroutineTimer = false;
+            _coroutineTimer = true;
 
         // Использование корутины: (Уничтожить другие эффекты, включить таймер)
         if (number == 1)
@@ -130,7 +130,6 @@ public class D6 : MonoBehaviour
         _boxCollider.enabled = false;
         _particleSystem.SetActive(false);
         _SphereOfEndLevel.DecreaseKeysCount();
-
     }
 
     public void DestroyEffect()
@@ -138,6 +137,7 @@ public class D6 : MonoBehaviour
         _playerAddPulse.PowerOfImpuls = _originalPlayerAddPulse;
         _playerRB.mass = _originalPlayerRB;
         _playerTransform.localScale = _originalPlayerTransform;
+        _playerAddPulse.SpeedScale = _originalPlayerSpeedScale;
     }
 
     IEnumerator PowerOfImpuls(bool destroyOtherEffect, bool timer)
